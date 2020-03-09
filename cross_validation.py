@@ -16,6 +16,10 @@ def tune_regularization_parameter(model_type, X_train, y_train):
     for i in range(5):
         C_set.append(C_set[len(C_set)-1]+0.3)
 
+    C = pd.DataFrame({
+        "C":pd.Series(C_set)
+    })
+    print(C)
     num_folds = 5
     mean_acc_per_fold = []
     x_trv = np.reshape(X_train, (5, -1, 28 * 28))

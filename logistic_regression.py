@@ -56,10 +56,8 @@ def main():
     plt.legend()
     plt.show()
 
+    print(dict)
+
 
 if __name__ == "__main__":
     main()
-
-
-
-

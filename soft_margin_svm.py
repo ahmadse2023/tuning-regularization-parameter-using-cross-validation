@@ -18,9 +18,9 @@ def main():
     test_acc = []
     training_acc = []
     print("Training and Predicting..")
-    for i in range(8,9):
+    for i in range(2,12):
         print("Training Classifier #{}".format(i-1))
-        clf = SVC(kernel='linear', C=0.4).fit(X_train, y_train)
+        clf = SVC(kernel='linear', C=(p ** i) * 0.000000001).fit(X_train, y_train)
         test_acc.append(clf.score(X_test,y_test))
         training_acc.append((clf.score(X_train,y_train)))
 
@@ -58,7 +58,5 @@ def main():
     plt.legend()
     plt.show()
 
-    print(dict)
 if __name__ == "__main__":
     main()
-
